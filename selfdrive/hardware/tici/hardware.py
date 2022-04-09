@@ -458,6 +458,7 @@ class Tici(HardwareBase):
         modem.Command(cmd, math.ceil(TIMEOUT), dbus_interface=MM_MODEM, timeout=TIMEOUT)
       except Exception:
         raise
+    os.system("sudo su -c 'mmcli -m 0 --set-allowed-modes=4g'")
 
 
   def get_networks(self):
